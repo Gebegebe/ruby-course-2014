@@ -35,7 +35,6 @@ class ArticleManager
   
   def include?(pattern)
     temp = Array.new
-    
     @articles.each {|elem| if elem.include?(pattern) then temp.push(elem) end}
     
     return temp
@@ -43,7 +42,6 @@ class ArticleManager
   
   def authors
     temp = Array.new
-    
     @articles.each {|elem| temp.push(elem.Author)}
     
     return temp.uniq
@@ -55,7 +53,6 @@ class ArticleManager
   
   def votes
     temp = 0
-    
     @articles.each {|elem| temp += elem.votes}
     
     return temp
