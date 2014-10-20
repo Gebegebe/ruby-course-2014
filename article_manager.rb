@@ -34,17 +34,11 @@ class ArticleManager
   end
   
   def include?(pattern)
-    temp = Array.new
-    @articles.each {|elem| if elem.include?(pattern) then temp.push(elem) end}
-    
-    return temp
+    @articles.select {|elem| elem.include?(pattern)}
   end
   
   def authors
-    temp = Array.new
-    @articles.each {|elem| temp.push(elem.Author)}
-    
-    return temp.uniq
+    @articles.select {|elem| elem.Author}.uniq
   end
   
   def number_of_authors
@@ -52,10 +46,7 @@ class ArticleManager
   end
   
   def votes
-    temp = 0
-    @articles.each {|elem| temp += elem.votes}
-    
-    return temp
+    @articles.incject {|temp, elem| temp += elem.votes}
   end
   
   def to_s
