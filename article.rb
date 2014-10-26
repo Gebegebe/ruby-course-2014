@@ -5,6 +5,7 @@ class Article
     @created_at = Time.now
     @likes = @dislikes = 0
   end
+  attr_reader :author
    
   def like!
     @likes += 1
