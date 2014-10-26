@@ -34,11 +34,11 @@ class ArticleManager
   end
   
   def include?(pattern)
-    @articles.select {|elem| elem.include?(pattern)}
+    @articles.map {|elem| elem.include?(pattern)}
   end
   
   def authors
-    @articles.select {|elem| elem.Author}.uniq
+    @articles.map {|elem| elem.author}.uniq
   end
   
   def number_of_authors
@@ -46,7 +46,7 @@ class ArticleManager
   end
   
   def votes
-    @articles.incject {|temp, elem| temp += elem.votes}
+    @articles.inject {|temp, elem| temp += elem.votes}
   end
   
   def to_s
