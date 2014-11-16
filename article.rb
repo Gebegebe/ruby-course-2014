@@ -6,6 +6,10 @@ class Article
     @likes = @dislikes = 0
   end
   attr_reader :author
+  attr_reader :content
+  attr_reader :title
+  attr_reader :likes
+  attr_reader :dislikes
    
   def like!
     @likes += 1
